@@ -21,13 +21,13 @@ impl State {
 pub fn solve(input: &str) {
     let mut sum: i32 = 0;
 
-    for line in input.split("\n") {
+    for line in input.lines() {
         let array: Vec<i32> = line.split(" ").map(|x| x.parse::<i32>().unwrap()).collect();
 
         match part2_check(&array) {
             Ok(_) => {
                 sum += 1;
-            },
+            }
             Err((_index1, _index2)) => {
                 // ngl, this is probably the worst way to do it, but it works
                 for i in 0..array.len() {
@@ -40,11 +40,11 @@ pub fn solve(input: &str) {
                         break;
                     }
                 }
-            },
+            }
         };
     }
 
-    println!["{}", sum];
+    println!["Part 2: {}", sum];
 }
 
 fn part2_check(array: &[i32]) -> Result<(), (usize, usize)> {
@@ -90,13 +90,12 @@ mod tests {
         assert_eq![part2_check(&[26, 26, 27, 27, 27]), Err((0, 1))];
         assert_eq![part2_check(&[26, 27, 27, 27]), Err((1, 2))];
 
-
         assert_eq![part2_check(&[1, 1, 1, 3, 7]), Err((0, 1))];
         assert_eq![part2_check(&[1, 1, 3, 7]), Err((0, 1))];
 
         assert_eq![part2_check(&[1, 1, 4, 4, 7, 10, 11, 18]), Err((0, 1))];
         assert_eq![part2_check(&[1, 4, 4, 7, 10, 11, 18]), Err((1, 2))];
-        
+
         assert_eq![part2_check(&[25, 29, 31, 32, 34, 35]), Err((0, 1))];
         assert_eq![part2_check(&[29, 31, 32, 34, 35]), Ok(())];
         assert_eq![part2_check(&[25, 31, 32, 34, 35]), Err((0, 1))];

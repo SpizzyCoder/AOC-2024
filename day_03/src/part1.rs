@@ -9,5 +9,5 @@ pub fn solve(input: &str) {
         sum += mul["num1"].parse::<i32>().unwrap() * mul["num2"].parse::<i32>().unwrap();
     }
 
-    println!["{}", sum];
+    println!["Part 1: {}", sum];
 }

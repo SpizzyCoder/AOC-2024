@@ -52,7 +52,7 @@ pub fn solve(input: &str) {
         }
     }
 
-    println!["{}", sum];
+    println!["Part 2: {}", sum];
 }
 
 fn check_loop(matrix: &Vec<Vec<char>>, mut guard_pos: (Coord, Direction)) -> bool {

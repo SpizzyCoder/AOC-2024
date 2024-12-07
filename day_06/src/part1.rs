@@ -41,10 +41,22 @@ pub fn solve(input: &str) {
 
     loop {
         let next_step: Coord = match guard_pos.1 {
-            Direction::North => Coord { x: guard_pos.0.x, y: guard_pos.0.y.overflowing_sub(1).0 },
-            Direction::East => Coord { x: guard_pos.0.x.overflowing_add(1).0, y: guard_pos.0.y },
-            Direction::South => Coord { x: guard_pos.0.x, y: guard_pos.0.y.overflowing_add(1).0 },
-            Direction::West => Coord { x: guard_pos.0.x.overflowing_sub(1).0, y: guard_pos.0.y },
+            Direction::North => Coord {
+                x: guard_pos.0.x,
+                y: guard_pos.0.y.overflowing_sub(1).0,
+            },
+            Direction::East => Coord {
+                x: guard_pos.0.x.overflowing_add(1).0,
+                y: guard_pos.0.y,
+            },
+            Direction::South => Coord {
+                x: guard_pos.0.x,
+                y: guard_pos.0.y.overflowing_add(1).0,
+            },
+            Direction::West => Coord {
+                x: guard_pos.0.x.overflowing_sub(1).0,
+                y: guard_pos.0.y,
+            },
         };
 
         // Check the next step
@@ -75,5 +87,5 @@ pub fn solve(input: &str) {
         }
     }
 
-    println!["{}", visited_coords.len()];
+    println!["Part 1: {}", visited_coords.len()];
 }

@@ -7,7 +7,7 @@ enum State {
 pub fn solve(input: &str) {
     let mut sum: i32 = 0;
 
-    for line in input.split("\n") {
+    for line in input.lines() {
         let array: Vec<i32> = line.split(" ").map(|x| x.parse::<i32>().unwrap()).collect();
 
         let state: State;
@@ -37,5 +37,5 @@ pub fn solve(input: &str) {
         }
     }
 
-    println!["{}", sum];
+    println!["Part 1: {}", sum];
 }

@@ -22,5 +22,5 @@ pub fn solve(input: &str) {
         }
     }
 
-    println!["{}", sum];
+    println!["Part 2: {}", sum];
 }

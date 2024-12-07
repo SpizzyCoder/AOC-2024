@@ -14,7 +14,7 @@ pub fn solve(input: &str) {
         }
     }
 
-    println!["{}", sum];
+    println!["Part 1: {}", sum];
 }
 
 fn check2(

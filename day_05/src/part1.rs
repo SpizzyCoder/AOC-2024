@@ -39,7 +39,7 @@ pub fn solve(input: &str) {
         }
     }
 
-    println!["{}", sum];
+    println!["Part 1: {}", sum];
 }
 
 fn check(rules: &[(i32, i32)], before: &[i32], current: i32) -> bool {

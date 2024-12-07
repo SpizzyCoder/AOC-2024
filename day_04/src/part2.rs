@@ -14,7 +14,7 @@ pub fn solve(input: &str) {
         sum += find(lines);
     }
 
-    println!["{}", sum];
+    println!["Part 2: {}", sum];
 }
 
 fn find(matrix: &[Vec<char>]) -> i32 {
