@@ -49,7 +49,7 @@ pub fn solve(input: &str) {
                     Operation::Addition => cur_number + numbers[index],
                     Operation::Multiplication => cur_number * numbers[index],
                     Operation::Concatination => {
-                        // This gives the right answer, but is wayy to inefficient
+                        // This gives the right answer, but is way too inefficient
                         // format!["{}{}", cur_number, numbers[index]].parse().unwrap()
 
                         let b_digits: u32 = (numbers[index] as f64).log10().floor() as u32 + 1;
