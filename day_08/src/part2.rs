@@ -12,6 +12,8 @@ struct Coord {
 
 pub fn solve(input: &str) {
     let mut antennas: Vec<Antenna> = Vec::new();
+
+    // Unwrap is safe
     let x_bound: usize = input.lines().next().unwrap().len() - 1;
     let y_bound: usize = input.lines().count() - 1;
 
